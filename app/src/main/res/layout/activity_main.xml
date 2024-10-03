@@ -1,64 +1,112 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ViewFlipper
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/view_flipper"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
-    <!-- Título del juego -->
-    <TextView
-        android:id="@+id/titulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="JOC ENDREVINA"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_marginBottom="16dp"/>
-
-    <!-- Entrada del número -->
-    <EditText
-        android:id="@+id/input_numero"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:hint="Escriu un número"
-        android:gravity="center"
-        android:layout_marginBottom="16dp"/>
-
-    <!-- Botón para validar el intento -->
-    <Button
-        android:id="@+id/btn_comprovar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Comprovar"/>
-
-    <!-- Contador de intentos -->
-    <TextView
-        android:id="@+id/contador_intents"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Intents: 0"
-        android:textSize="18sp"
-        android:layout_marginTop="16dp"/>
-
-    <!-- Historial de intentos -->
-    <ScrollView
+    <!-- Layout del juego -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="16dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp">
 
+        <!-- Título del juego -->
         <TextView
-            android:id="@+id/historial_intents"
-            android:layout_width="match_parent"
+            android:id="@+id/titulo"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Historial d'intents"
+            android:text="JOC ENDREVINA"
+            android:textSize="24sp"
+            android:textStyle="bold"
             android:gravity="center"
-            android:padding="8dp"/>
-    </ScrollView>
+            android:layout_marginBottom="16dp"/>
 
-</LinearLayout>
+        <!-- Entrada del número -->
+        <EditText
+            android:id="@+id/input_numero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="Escriu un número"
+            android:gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Botón para validar el intento -->
+        <Button
+            android:id="@+id/btn_comprovar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Comprovar"/>
+
+        <!-- Contador de intentos -->
+        <TextView
+            android:id="@+id/contador_intents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Intents: 0"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Historial de intentos -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:id="@+id/historial_intents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Historial d'intents"
+                android:gravity="center"
+                android:padding="8dp"/>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/btn_hall_of_fame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ver récords"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+
+    <!-- Layout de Hall of Fame -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Título de la página -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hall of Fame"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Lista de récords -->
+        <ListView
+            android:id="@+id/list_view_records"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>  <!-- Asegúrate de usar layout_weight para que ocupe el espacio disponible -->
+
+        <!-- Botón para volver al juego -->
+        <Button
+            android:id="@+id/btn_back_to_game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tornar al joc"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+
+</ViewFlipper>
 

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Título de la página -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hall of Fame"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Lista de récords -->
+    <ListView
+        android:id="@+id/list_view_records"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>  <!-- Asegúrate de usar layout_weight para que ocupe el espacio disponible -->
+
+    <!-- Botón para volver al juego -->
+    <Button
+        android:id="@+id/btn_back_to_game"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tornar al joc"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>
+
